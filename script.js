@@ -30,4 +30,32 @@ $(document).ready(function( {
         saveEvent();
         clearSchedule();
     }
+// function to store the current date
+    function storeTodaysDate(){
+    //exchanging data with server and using JSONparse to parse the data so it become a javaScript object
+        savedSchedule.JSONparse(localStorage.getItem(date));
+//If the saved schedule is empty (null) pull up today's date and push that argument to the dateObj in local storage
+        if (savedSchedule === null) {
+            console.log('creating');
+            dateObj['date'] = date;
+            dateArray.push(dateObj);
+            localStorage.setItem(date, JSON.stringify(dateArray));
+        }
+    }
+//function to pull up a date in the future
+    function storeDifferentDate(){
+      //variable to call up existing storage in local memory and exchange it with the sever in javaScript  
+        var existingStorage = JSON.parse(localStorage.getItem(date));
+//if exisiting storage is equal to or the same value as null run the function
+        if (existingStorage !== null) {
+            scheduleArray = existingStorage;
+        } else {
+            currentDateObj = {};
+            currentDateArr = [];
+            currentDateObj['date'] = date;
+            currentDateArray.push(currentDateObj);
+            localStorage.setItem(date, JSON.stringify(currentDateArr));
+        } 
+    }
+
 }))
