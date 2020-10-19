@@ -57,5 +57,47 @@ $(document).ready(function( {
             localStorage.setItem(date, JSON.stringify(currentDateArr));
         } 
     }
+//function to update the current day and time
+    function updateTime(differntDate) {
+        if (differentDate) !== date) {
+            var currentDate = moment.().format('dddd, MMMM, Do');
+            var currentYear = moment().format('YYYY');
+            $('#title-date').html(currentDate);
+            $('#title-year').html(currentYear);
+            dynamicTime();
+        }
+//if on current day and time, run this code block that shows what is scheduled for today
+        if (day < 0) {
+            $('#title-date').html(differntDate);
+            $('#title-time').html(
+                'What you have scheduled for today.'
+            );
+            $('#dynamic-time.').hide(); //hide the current day and time
+
+            var dayOfYear = moment().dayOfYear();
+            if (dayOfYear + day ===0) {
+                currentYear = previousDate.format('YYYY');
+                $('#title-year').html(currentYear);
+            }
+//else if today is current but time is past show what has been completed
+        } else if (day > 0) {
+            currentYear = nextDate.format('YYYY');
+            $('#title-date').hmtl(differntDate);
+            $('#title-time').html(
+                'What you have already completed'
+            );
+            $('#title-year').html(currentYear);
+            $('#dynamic-time').hide();
+//else if today is curret show what is planned for the rest of the day       
+        } else {
+            currentYear = moment.().format('YYYY');
+            $('#title-time').html(
+                'Here is your schedule for today. The current time is:'
+            );
+            $('#title-year').html(currentYear)
+            $('#dynamic-time').show(); //show the current time 
+            dynamicTime();
+        }
+    }
 
 }))
