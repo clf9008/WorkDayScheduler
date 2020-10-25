@@ -81,3 +81,17 @@ function displayTasks() {
         $(`#${_thisHour.id}`).val(_thisHour.reminder);
     })
 }
+
+//function that will display any items that had previously been saved in local storage
+function previousTasks() {
+    //entering variable into local storage for any prreviously stored data in our local storage 
+    var storedTasks = JSON.parse(localStorage.getItem("hours"));
+    //if storedTasks in local storage is set for hours, display saved tasks.
+    if (storedTasks) {
+        hours = storedTasks;}
+
+    saveTasks();
+    displayTasks();
+}
+
+
