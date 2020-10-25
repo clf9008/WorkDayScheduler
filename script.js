@@ -1,39 +1,72 @@
-//declaring variables to store in Global memory
-var scheduleHours = [ 9, 10, 11, 12, 13, 14, 15, 15, 17]
-var scheduleDisplay = ["9 AM", "10 AM", "11 AM", "12 PM", "1 PM", "2 PM", "3 PM", "4 PM", "5 PM"]
-//appending the text document to show how we want to the current day displayed
-$("#scheduleToday").text(moment().format("dddd, MMMM Do YYYY"))
-
-//for loop to progress current time on schedule display
-for (let i = 0; i < scheduleHours.length; i++) {
-    //creating a variable in local storage for the current time    
-        var currentTime = scheduleDisplay[i]
-    //Appending the text document to create 9 rows for each hour of the workday with a class id
-    $(".container").append(`
-    <div id= "hour-${scheduleHours[i]}" class= "row block-time">
-    <div class= "col-md-1 hour" id= "text-block" />
-    <button class= "button saveBtn col-md-2">Save</button>
-    </div>
-    `)
+var myDay = [
+    {
+        id: "0",
+        hour: "9",
+        time: "9",
+        meridiem: "am",
+        reminder: ""
+    },
+    {
+        id: "1",
+        hour: "10",
+        time: "10",
+        meridiem: "am",
+        reminder: ""
+    },
+    {
+        id: "2",
+        hour: "11",
+        time: "11",
+        meridiem: "am",
+        reminder: ""
+    },
+    {
+        id: "3",
+        hour: "12",
+        time: "12",
+        meridiem: "pm",
+        reminder: ""
+    },
+    {
+        id: "4",
+        hour: "1",
+        time: "13",
+        meridiem: "pm",
+        reminder: ""
+    },
+    {
+        id: "5",
+        hour: "2",
+        time: "14",
+        meridiem: "pm",
+        reminder: ""
+    },
+    {
+        id: "6",
+        hour: "3",
+        time: "15",
+        meridiem: "pm",
+        reminder: ""
+    },
+    {
+        id: "7",
+        hour: "4",
+        time: "16",
+        meridiem: "pm",
+        reminder: ""
+    },
+    {
+        id: "8",
+        hour: "5",
+        time: "17",
+        meridiem: "pm",
+        reminder: ""
+    },
     
-//Appending document to add a current hour, past hour, and future hour
-if(moment().format("H") == hour[i]){
-    $("#hour-"+ scheduleHours[i].addClass("Current Hour")
-}
-else if(moment().format("H")> scheduleHours[i]){
-    $("#hour-"+ scheduleHours[i].addClass("Past Hours")
-}
-else if(moment().format("H")< scheduleHours[i]){
-    $("#hour-"+ scheduleHours[i].addClass("Future Hours")
-}}
-//Creating an 'on-click' event for the saveBtn that saves data entered into local storage
-$(".saveBtn").on("click", function(){
-    var value= $(this).siblings(".description").val()
-    var time= $(this).parent().attr("id")
-    localStorage.setItem(time, value)
-})
-//creating a for loop that allows us to pull the information from local storage to append the document
-for (let i = 9; i < 18; i++) {
+]
 
-$('hour-${i} .description').val(localStorage.getItem('hour-${i}'))
+// function to generate current date in header of text document
+function headerDate() {
+    var currentHeaderDate = moment().format('dddd, MMMM Do');
+    $("#currentDay").text(currentHeaderDate);
 }
