@@ -131,4 +131,15 @@ hours.forEach(function(thisHour) {
         "class": "future"
     })
 }
+//variable to create save button and append it to the text document 
+var saveButton = $("<i class='far fa-save fa-lg'></i>")
+var savePlan = $("<button>")
+    .attr({
+        "class": "col-md-1 saveBtn"
+});
+savePlan.append(saveButton);
+hourRow.append(hourField, hourPlan, savePlan);
+})
+
+
 
