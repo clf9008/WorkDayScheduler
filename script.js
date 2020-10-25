@@ -27,3 +27,14 @@ else if(moment().format("H")> scheduleHours[i]){
 else if(moment().format("H")< scheduleHours[i]){
     $("#hour-"+ scheduleHours[i].addClass("Future Hours")
 }}
+//Creating an 'on-click' event for the saveBtn that saves data entered into local storage
+$(".saveBtn").on("click", function(){
+    var value= $(this).siblings(".description").val()
+    var time= $(this).parent().attr("id")
+    localStorage.setItem(time, value)
+})
+//creating a for loop that allows us to pull the information from local storage to append the document
+for (let i = 9; i < 18; i++) {
+
+$('hour-${i} .description').val(localStorage.getItem('hour-${i}'))
+}
