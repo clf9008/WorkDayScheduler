@@ -21,10 +21,10 @@ $(document).ready(function () {
     $("textarea").each(function () {
         var name = parseInt($(this).attr("name"));
         if (name < now) {
-            $(this).addClass("future");
+            $(this).addClass("past");
         }
         if (name > now) {
-            $(this).addClass("past")
+            $(this).addClass("future")
         }
         if (name === now) {
             $(this).addClass("present")
