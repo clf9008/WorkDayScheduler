@@ -117,4 +117,18 @@ hours.forEach(function(thisHour) {
  var planData = $("<textarea>");
  hourTask.append(planData);
  planData.attr("id", thisHour.id);
+ //if/else if statements to display hours as past, present, or future depending on current hour
+ if (thisHour.time < moment().format("HH")) {
+    planData.attr ({
+        "class": "past", 
+    })
+} else if (thisHour.time === moment().format("HH")) {
+    planData.attr({
+        "class": "present"
+    })
+} else if (thisHour.time > moment().format("HH")) {
+    planData.attr({
+        "class": "future"
+    })
+}
 
