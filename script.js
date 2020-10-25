@@ -1,4 +1,4 @@
-var myDay = [
+var hours = [
     {
         id: "0",
         hour: "9",
@@ -69,4 +69,15 @@ var myDay = [
 function headerDate() {
     var currentHeaderDate = moment().format('dddd, MMMM Do');
     $("#currentDay").text(currentHeaderDate);
+}
+//function to save tasks for day/hour to local storage
+function saveTasks() {
+    localStorage.setItem("myDay", JSON.stringify(myDay));
+}
+
+//function to display the tasks that are saved into the local storage
+function displayTasks() {
+    hours.forEach(function (_thisHour) {
+        $(`#${_thisHour.id}`).val(_thisHour.reminder);
+    })
 }
