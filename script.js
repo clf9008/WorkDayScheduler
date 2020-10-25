@@ -9,3 +9,11 @@ for (let i = 0; i < scheduleHours.length; i++) {
     //creating a variable in local storage for the current time    
         var currentTime = scheduleDisplay[i]
     
+    //Appending the text document to create 9 rows for each hour of the workday with a class id
+    $(".container").append('
+    <div id= "hour-${scheduleHours[i]}" class= "row block-time">
+    <div class= "col-md-12 description" id= "memo-text" />
+    <button class= "button saveBtn col-md-2">Save</button>
+    </div>
+    ')
+    
