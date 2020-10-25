@@ -12,4 +12,4 @@ Time management is an important part of any succesful carrer. In order to be on 
 
 [Work Day Scheduler](https://clf9008.github.io/WorkDayScheduler/)
 
-
+![Work Day Scheduler](C:\Users\Chase\Desktop\code-activities\DayPlanner\WorkDayScheduler\assets\DayPlanner.png)
