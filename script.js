@@ -17,3 +17,13 @@ for (let i = 0; i < scheduleHours.length; i++) {
     </div>
     ')
     
+//Appending document to add a current hour, past hour, and future hour
+if(moment().format("H") == hour[i]){
+    $("#hour-"+ scheduleHours[i].addClass("Current Hour")
+}
+else if(moment().format("H")> scheduleHours[i]){
+    $("#hour-"+ scheduleHours[i].addClass("Past Hours")
+}
+else if(moment().format("H")< scheduleHours[i]){
+    $("#hour-"+ scheduleHours[i].addClass("Future Hours")
+}}
