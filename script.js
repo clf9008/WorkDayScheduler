@@ -4,3 +4,8 @@ var scheduleDisplay = ["9 AM", "10 AM", "11 AM", "12 PM", "1 PM", "2 PM", "3 PM"
 //appending the text document to show how we want to the current day displayed
 $("#scheduleToday").text(moment().format("dddd, MMMM Do YYYY"))
 
+//for loop to progress current time on schedule display
+for (let i = 0; i < scheduleHours.length; i++) {
+    //creating a variable in local storage for the current time    
+        var currentTime = scheduleDisplay[i]
+    
