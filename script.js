@@ -89,9 +89,25 @@ function previousTasks() {
     //if storedTasks in local storage is set for hours, display saved tasks.
     if (storedTasks) {
         hours = storedTasks;}
-
     saveTasks();
     displayTasks();
 }
 
+//Loads the current date in the header
+headerDate();
 
+//function to append the text document to display the rows/hours
+hours.forEach(function(thisHour) {
+    //creating time block rows
+    var hourRow = $("<form>").attr({
+        "class": "row"
+    });
+    $(".container").append(hourRow);
+    //creates time field
+    var hourField = $("<div>")
+        .text(`${thisHour.hour}${thisHour.meridiem}`)
+        .attr({
+            "class": "col-md-2 hour"
+    });
+
+   
