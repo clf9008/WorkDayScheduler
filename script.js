@@ -109,5 +109,12 @@ hours.forEach(function(thisHour) {
         .attr({
             "class": "col-md-2 hour"
     });
+     //creating scheduler data
+     var hourTask = $("<div>")
+     .attr({
+         "class": "col-md-9 description p-0"
+     });
+ var planData = $("<textarea>");
+ hourTask.append(planData);
+ planData.attr("id", thisHour.id);
 
-   
