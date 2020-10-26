@@ -1,13 +1,13 @@
+//funtion to append the document once the whole document has loaded
 $(document).ready(function () {
-
-    //Setting up the date and appending to the HTML page
+    //variable to call current day and append it to HTML Page
     var today = moment().format('MMMM Do YYYY');
     console.log(today)
     $(".todaysDate").append(today);
-
+    //Variable to call current hour
     var now = parseInt(moment().format('HH'));
     console.log(now)
-
+    //Variable to store in local memory that appends the html page to show hours of work day
     var $text9AM = $("#text9AM");
     var $text10AM = $("#text10AM");
     var $text11AM = $("#text11AM");
@@ -17,30 +17,22 @@ $(document).ready(function () {
     var $text3PM = $("#text3PM");
     var $text4PM = $("#text4PM");
     var $text5PM = $("#text5PM");
-
-
+    //function to change present, past, and future hours to appropriate colors
     $("textarea").each(function () {
         var name = parseInt($(this).attr("name"));
         if (name < now) {
             $(this).addClass("bg-gray");
         }
-
-
         if (name > now) {
             $(this).addClass("bg-green")
         }
-
         if (name === now) {
             $(this).addClass("bg-red")
         }
-
-
-
     })
-
+    //funciton to create an event listener for the "on, click" of the Save Button
     $("button").on("click", function () {
-
-        //setting items in the local storage
+    //Storing input in text block for associated hour into local memory
         localStorage.setItem("9AM", ($text9AM.val()))
         localStorage.setItem("10AM", ($text10AM.val()))
         localStorage.setItem("11AM", ($text11AM.val()))
@@ -53,7 +45,7 @@ $(document).ready(function () {
 
     })
 
-    //getting the content stored and sending to the screen. When page is refreshed content will stay
+    //calling the content stored in the local memory to display 
     $("#text9AM").append(localStorage.getItem("9AM"));
     $("#text10AM").append(localStorage.getItem("10AM"));
     $("#text11AM").append(localStorage.getItem("11AM"));
