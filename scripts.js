@@ -21,13 +21,13 @@ $(document).ready(function () {
     $("textarea").each(function () {
         var name = parseInt($(this).attr("name"));
         if (name < now) {
-            $(this).addClass("present");
+            $(this).addClass("future");
         }
         if (name > now) {
-            $(this).addClass("future")
+            $(this).addClass("past")
         }
         if (name === now) {
-            $(this).addClass("past")
+            $(this).addClass("present")
         }
     })
     //funciton to create an event listener for the "on, click" of the Save Button
