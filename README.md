@@ -4,6 +4,8 @@ Time management is an important part of any succesful carrer. In order to be on 
 
 ## Outside Applications Used
 
+These are some of the outside applications used on the Work Day Scheduler
+
 - [CSS Framework through Bootstrap](www.getbootstrap.com)
 - [Jquery](https://jquery.com/)
 - [Moment.js JavaScript Library](https://momentjs.com/)
