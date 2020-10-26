@@ -1,24 +1,31 @@
 body {
   font-family: 'Times New Roman', Times, serif;
-  font-size: 16px;
-  line-height: 1;
+  font-size: 23px;
+  line-height: 4;
+  background-image: url(https://images.unsplash.com/photo-1542435503-956c469947f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80);
+  background-size: cover;
+  background-repeat: no-repeat;
+  
 }
 
 textarea{
   background: transparent;
   border: none;
   resize: none;
-  color: #000000;
+  color: gray;
   border-left: 1px solid black;
   padding: 10px;
 }
 
 .jumbotron {
+  background-image: url("https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80");
+  background-size: cover;
+  height: 410px;
   text-align: center;
   background-color: transparent;
-  color: black;
-  border-radius: 0;
-  border-bottom: 10px solid black;
+  color: whitesmoke;
+  border-radius: 20px;
+  border-bottom: 20px solid black;
 }
 
 .description{
@@ -32,8 +39,8 @@ textarea{
 
 .row {
   white-space: pre-wrap;
-  height: 80px;
-  border-top: 1px solid white;;
+  height: 70px;
+  border-top: 2px solid gray;
 }
 
 .hour {
@@ -43,7 +50,7 @@ textarea{
 }
 
 .past {
-  background-color: #d3d3d3;
+  background-color: red;
   color: white;
 }
 
@@ -59,10 +66,10 @@ textarea{
 
 .saveBtn {
   border-left: 1px solid black;
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
-  background-color: #06AED5;
-  color: white;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background-color: GRAY;
+  color:white;
 }
 
 .saveBtn i:hover {
