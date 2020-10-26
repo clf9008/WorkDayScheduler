@@ -16,4 +16,4 @@ These are some of the outside applications used on the Work Day Scheduler
 
 #### Deployed Application Image
 
-![Image of Day Scheduler](assets\DayPlanner.png)
+![Image of Day Scheduler](C:\Users\Chase\Desktop\code-activities\DayPlanner\WorkDayScheduler\assets\DayPlanner.png)
