@@ -1,13 +1,13 @@
-//loading the function onces the html page is ready
 $(document).ready(function () {
-    //creating a variable to store in local memory that has the current date
+
+    //Setting up the date and appending to the HTML page
     var today = moment().format('MMMM Do YYYY');
-    // console.log(today)
+    console.log(today)
     $(".todaysDate").append(today);
-    //creating a variable to store in local memory that has the current time
+
     var now = parseInt(moment().format('HH'));
-    // console.log(now)
-//creating variables that append the HTML docuemnt to display work hours 9am-5pm
+    console.log(now)
+
     var $text9AM = $("#text9AM");
     var $text10AM = $("#text10AM");
     var $text11AM = $("#text11AM");
@@ -17,22 +17,30 @@ $(document).ready(function () {
     var $text3PM = $("#text3PM");
     var $text4PM = $("#text4PM");
     var $text5PM = $("#text5PM");
-   //function that will change the color of the background for past, present, future 
+
+
     $("textarea").each(function () {
         var name = parseInt($(this).attr("name"));
         if (name < now) {
             $(this).addClass("bg-gray");
         }
+
+
         if (name > now) {
             $(this).addClass("bg-green")
         }
+
         if (name === now) {
             $(this).addClass("bg-red")
         }
+
+
+
     })
-    //creating an 'on-click' event function that will store any input plavce in text box
+
     $("button").on("click", function () {
-        //Sending items to local storage if they are entered into input value
+
+        //setting items in the local storage
         localStorage.setItem("9AM", ($text9AM.val()))
         localStorage.setItem("10AM", ($text10AM.val()))
         localStorage.setItem("11AM", ($text11AM.val()))
@@ -44,7 +52,8 @@ $(document).ready(function () {
         localStorage.setItem("17PM", ($text5PM.val()))
 
     })
-    //Grabbing the content from local storage and displaying it on the page when refreshed
+
+    //getting the content stored and sending to the screen. When page is refreshed content will stay
     $("#text9AM").append(localStorage.getItem("9AM"));
     $("#text10AM").append(localStorage.getItem("10AM"));
     $("#text11AM").append(localStorage.getItem("11AM"));
